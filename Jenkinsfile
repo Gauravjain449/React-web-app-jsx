@@ -10,9 +10,9 @@ pipeline {
 
     environment {
         PASSWORD = credentials('DOCKER_PASSWORD')
-        REPOSITORY_TEST_TAG="${DOCKER_HUB_USER_NAME}/client-app-JSX-test:${BUILD_ID}"
-        REPOSITORY_PROD_TAG="${DOCKER_HUB_USER_NAME}/client-app-JSX:${BUILD_ID}"
-        CONTAINER_NAME="client-app-JSX-test-${BUILD_ID}"
+        REPOSITORY_TEST_TAG="${DOCKER_HUB_USER_NAME}/client-app-jsx-test:${BUILD_ID}"
+        REPOSITORY_PROD_TAG="${DOCKER_HUB_USER_NAME}/client-app-jsx:${BUILD_ID}"
+        CONTAINER_NAME="client-app-jsx-test-${BUILD_ID}"
         }
 
     options {
