@@ -1,13 +1,16 @@
-import React from "react";
-import { shallow } from "enzyme";
-import App from "./App";
-import Posts from "./components/Posts";
+// import React from "react";
+// import { shallow } from "enzyme";
+// import App from "./App";
+// import Posts from "./components/Posts";
 
-describe("App Component", () => {
-  const wrapper = shallow(<App />);
+// describe("App", () => {
+//   let wrapper;
+//   beforeEach(() => {
+//     wrapper = shallow(<App />);
+//   });
 
-  it("should render Posts Component", () => {
-    const element = wrapper.find(Posts);
-    expect(element).toExist();
-  });
-});
+//   it("should render Posts", () => {
+//     const element = wrapper.find(Posts);
+//     expect(element).toExist();
+//   });
+// });
