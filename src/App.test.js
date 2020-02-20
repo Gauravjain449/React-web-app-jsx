@@ -1,16 +1,9 @@
-// import React from "react";
-// import { shallow } from "enzyme";
-// import App from "./App";
-// import Posts from "./components/Posts";
+import React from 'react';
+import { render } from '@testing-library/react';
+import App from './App';
 
-// describe("App", () => {
-//   let wrapper;
-//   beforeEach(() => {
-//     wrapper = shallow(<App />);
-//   });
-
-//   it("should render Posts", () => {
-//     const element = wrapper.find(Posts);
-//     expect(element).toExist();
-//   });
-// });
+test('renders learn react link', () => {
+  const { getByText } = render(<App />);
+  const linkElement = getByText(/Testing/i);
+  expect(linkElement).toBeInTheDocument();
+});
