@@ -4,7 +4,7 @@
     metadata:
       name: client-deployment-jsx
     spec:
-      replicas: 1
+      replicas: 2
       selector:
         matchLabels:
           component: web-jsx
