@@ -16,11 +16,7 @@ pipeline {
         }
         stage('Install Dependencies') {
              steps {
-                nodejs('recent'){
-
-                  sh  'npm install'
-  
-                }
+                sh 'npm install'
             }
         }
     }
