@@ -15,13 +15,13 @@ pipeline {
             }
         }
         stage('Install Dependencies') {
-             steps {
+            
                 nodejs('recent node'){
 
                     npm install
   
                 }
-            }
+          
         }
     }
 }
