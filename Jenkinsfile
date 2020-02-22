@@ -10,11 +10,7 @@ pipeline {
                 git credentialsId: 'GitHub', url: "https://github.com/Gauravjain449/React-web-app-jsx.git"
             }
         }
-        stage('Install Dependencies') {
-             steps {
-                sh 'npm install'
-            }
-        }
+       
     }
 }
 
