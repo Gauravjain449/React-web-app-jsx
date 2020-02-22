@@ -1,8 +1,7 @@
 pipeline {
    agent any
 
-    tools {nodejs "recent node"}
-
+    
     options {
         timeout(time: 1, unit: 'HOURS')
     }
@@ -17,7 +16,11 @@ pipeline {
         }
         stage('Install Dependencies') {
              steps {
-                sh 'npm install'
+                nodejs('recent node'){
+
+                    npm install
+  
+                }
             }
         }
     }
