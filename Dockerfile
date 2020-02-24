@@ -4,8 +4,8 @@ COPY package.json .
 RUN npm install
 COPY . .
 RUN npm run build
-COPY /app/build .
-#COPY --from=builder /app/build .
+#COPY /app/build .
+COPY --from=builder /app/build /app/build
 
 #FROM nginx
 
