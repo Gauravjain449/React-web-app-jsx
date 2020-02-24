@@ -35,7 +35,7 @@ pipeline {
         stage('COPY Build') {
             steps {
                 sh 'pwd'
-                //sh 'docker cp ${CONTAINER_NAME}:/app/build .'
+                sh 'docker cp ${CONTAINER_NAME}:/app/build /c/Users/g.h.jain/'
             }
         }
         // stage('Install Dependencies'){
