@@ -20,7 +20,7 @@ pipeline {
                
                     timeout(time: 3, unit: 'SECONDS') {  // HOURS , MINUTES
                         retry(3) {
-                            bat 'npm --help'
+                            bat 'npm --version'
                         }
                     }
 
