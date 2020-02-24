@@ -18,7 +18,7 @@ pipeline {
              steps {
                 retry(3) {
                     //timeout(time: 20, unit: 'SECONDS') {  // HOURS , MINUTES
-                        bat 'npm install'
+                        bat 'npm xxx'
                    // }
                 }
             }
