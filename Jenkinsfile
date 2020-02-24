@@ -16,12 +16,12 @@ pipeline {
         }
         stage('Install Dependencies') {
              steps {
-                    retry(3) {
-                        bat 'npm XXX'
-                    }
+                   
                
-                    timeout(time: 20, unit: 'SECONDS') {  // HOURS , MINUTES
-                        bat 'npm install'
+                    timeout(time: 3, unit: 'SECONDS') {  // HOURS , MINUTES
+                        retry(3) {
+                            bat 'npm XXX'
+                        }
                     }
 
                    
