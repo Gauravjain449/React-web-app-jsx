@@ -3,7 +3,7 @@ pipeline {
 
     
     options {
-        timeout(time: 30, unit: 'SECONDS')
+        timeout(time: 1, unit: 'HOURS')
     }
     stages {
        
@@ -16,11 +16,15 @@ pipeline {
         }
         stage('Install Dependencies') {
              steps {
-                retry(3) {
-                    //timeout(time: 20, unit: 'SECONDS') {  // HOURS , MINUTES
-                        bat 'npm xxx'
-                   // }
-                }
+                    retry(3) {
+                        bat 'npm XXX'
+                    }
+               
+                    timeout(time: 20, unit: 'SECONDS') {  // HOURS , MINUTES
+                        bat 'npm install'
+                    }
+
+                   
             }
         }
     }
