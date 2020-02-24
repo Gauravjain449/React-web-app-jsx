@@ -16,19 +16,29 @@ pipeline {
                 git credentialsId: 'GitHub', url: "https://github.com/Gauravjain449/React-web-app-jsx.git"
             }
         }
-        stage('Install Dependencies') {
-             steps {
-                   
-               
-                    timeout(time: 30, unit: 'SECONDS') {  // HOURS , MINUTES
-                        retry(3) {
-                            sh 'npm --version'
-                        }
-                    }
-
-                   
+        stage('Install Dependencies'){
+            steps {
+                sh 'npm install'
             }
         }
+        stage('Build'){
+            steps {
+                sh 'npm run build'
+            }
+        }
+        // stage('Install Dependencies') {
+        //      steps {
+                   
+               
+        //             timeout(time: 30, unit: 'SECONDS') {  // HOURS , MINUTES
+        //                 retry(3) {
+        //                     sh 'npm --version'
+        //                 }
+        //             }
+
+                   
+        //     }
+        // }
         
     }
     post {
