@@ -34,6 +34,7 @@ pipeline {
         }
         stage('COPY Build') {
             steps {
+                sh 'pwd'
                 sh 'docker cp ${CONTAINER_NAME}:/app/build .'
             }
         }
