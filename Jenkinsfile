@@ -18,9 +18,9 @@ pipeline {
              steps {
                    
                
-                    timeout(time: 3, unit: 'SECONDS') {  // HOURS , MINUTES
+                    timeout(time: 30, unit: 'SECONDS') {  // HOURS , MINUTES
                         retry(3) {
-                            bat 'npm --version'
+                            bat 'npm -+version'
                         }
                     }
 
