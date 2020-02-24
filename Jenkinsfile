@@ -6,6 +6,7 @@ pipeline {
     environment {
        
         REPOSITORY_PROD_TAG="gauravjain449/client-app-jsx-test:${BUILD_NUMBER}"
+        CONTAINER_NAME="client-app-jsx-test-${BUILD_NUMBER}"
       
     }
     
@@ -24,6 +25,11 @@ pipeline {
         stage('Docker build Prod image') {
             steps {
                 sh 'docker build -t ${REPOSITORY_PROD_TAG} .'
+            }
+        }
+        stage('Docker Run image') {
+            steps {
+                sh 'docker run --name=${CONTAINER_NAME}  ${REPOSITORY_TEST_TAG} npm start'
             }
         }
         // stage('Install Dependencies'){
