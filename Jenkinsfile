@@ -1,7 +1,8 @@
 pipeline {
-   agent {
-        docker { image 'node:alpine' }
-    }
+//    agent {
+//         docker { image 'node:alpine' }
+//     }
+    agent any
     environment {
        
         REPOSITORY_PROD_TAG="gauravjain449/client-app-jsx-test:${BUILD_NUMBER}"
