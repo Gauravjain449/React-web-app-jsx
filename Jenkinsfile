@@ -2,30 +2,39 @@ pipeline {
    agent {
         docker { image 'node:alpine' }
     }
-
+    environment {
+       
+        REPOSITORY_PROD_TAG="gauravjain449/client-app-jsx-test:${BUILD_NUMBER}"
+      
+    }
     
     options {
         timeout(time: 1, unit: 'HOURS')
     }
+
     stages {
        
-
         stage('Clean WS and GIT Pull') {
             steps {
                 cleanWs()
                 git credentialsId: 'GitHub', url: "https://github.com/Gauravjain449/React-web-app-jsx.git"
             }
         }
-        stage('Install Dependencies'){
+        stage('Docker build Prod image') {
             steps {
-                sh 'npm install'
+                sh 'docker build -t ${REPOSITORY_PROD_TAG} .'
             }
         }
-        stage('Build'){
-            steps {
-                sh 'npm run build'
-            }
-        }
+        // stage('Install Dependencies'){
+        //     steps {
+        //         sh 'npm install'
+        //     }
+        // }
+        // stage('Build'){
+        //     steps {
+        //         sh 'npm run build'
+        //     }
+        // }
         // stage('Install Dependencies') {
         //      steps {
                    
@@ -44,7 +53,6 @@ pipeline {
     post {
         always {
             echo 'This will always run'
-            junit 'build/**/*.*'
         }
         success {
             echo 'This will run only if successful'
