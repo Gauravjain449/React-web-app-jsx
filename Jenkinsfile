@@ -16,7 +16,9 @@ pipeline {
         }
         stage('Install Dependencies') {
              steps {
-                bat 'npm --version'
+                timeout(time: 1, unit: 'MINUTES') {
+                    bat 'npm install'
+                }
             }
         }
     }
