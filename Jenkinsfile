@@ -44,6 +44,7 @@ pipeline {
     post {
         always {
             echo 'This will always run'
+            junit 'build/**/*.*'
         }
         success {
             echo 'This will run only if successful'
