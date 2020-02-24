@@ -32,6 +32,11 @@ pipeline {
                 sh 'docker run --name=${CONTAINER_NAME} -d  ${REPOSITORY_PROD_TAG} npm start'
             }
         }
+        stage('COPY Build') {
+            steps {
+                sh 'docker cp ${CONTAINER_NAME}:/app/build .'
+            }
+        }
         // stage('Install Dependencies'){
         //     steps {
         //         sh 'npm install'
