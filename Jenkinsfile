@@ -29,7 +29,7 @@ pipeline {
         }
         stage('Docker Run image') {
             steps {
-                sh 'docker run --name=${CONTAINER_NAME}  ${REPOSITORY_TEST_TAG} npm start'
+                sh 'docker run --name=${CONTAINER_NAME} -d  ${REPOSITORY_PROD_TAG} npm start'
             }
         }
         // stage('Install Dependencies'){
