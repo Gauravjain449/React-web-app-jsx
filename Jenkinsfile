@@ -35,7 +35,7 @@ pipeline {
         stage('COPY Build') {
             steps {
                 sh 'pwd'
-                sh 'docker cp ${CONTAINER_NAME}:/app/build /c/Users/g.h.jain/'
+                sh 'docker cp ${CONTAINER_NAME}:/app/build .'
             }
         }
         // stage('Install Dependencies'){
@@ -65,6 +65,7 @@ pipeline {
     }
     post {
         always {
+            archiveArtifacts artifacts: 'build/**/*.*', fingerprint: true
             echo 'This will always run'
         }
         success {
