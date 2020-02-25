@@ -66,7 +66,7 @@ pipeline {
     post {
         always {
             //archiveArtifacts artifacts: 'build/**/*', fingerprint: true
-            deleteDir()
+            //deleteDir()
             echo 'This will always run'
         }
         success {
