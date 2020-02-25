@@ -68,6 +68,9 @@ pipeline {
             archiveArtifacts artifacts: 'build/**/*', fingerprint: true
             deleteDir()
             echo 'This will always run'
+            mail to: 'g.h.jain@accenture.com',
+            subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+            body: "Something is wrong with ${env.BUILD_URL}"
         }
         success {
             echo 'This will run only if successful'
